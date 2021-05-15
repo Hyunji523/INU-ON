@@ -1,4 +1,4 @@
-# inuon
+# INU ON
 ## This is the server-side application for INU chatbot project called INU ON.
 #### Used skill: Django, sqlite3
 #### Used package: Selenium, BeautifulSoup4, Pyvirtualdisplay
