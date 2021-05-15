@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>인천대학교 챗봇</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="static/scripts/responses.js"></script>
+  <script src="static/scripts/chat.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <h1>INU ON</h1>
+    </div>
+    <div class="chat-container">      
+      <!--mainmenu-->
+      <ul class="mainMenu">
+        <li>
+          <a onclick="getResponse(); ">
+            <div class="menu1"></div>
+            공지사항
+          </a>
+          <a onclick="getResponse(); return false;">
+            <div class="menu1"></div>
+            학사일정
+          </a>
+          <a onclick="getResponse(); return false;">
+            <div class="menu1"></div>
+            수강신청
+          </a>
+        </li>
+        <li>
+          <a onclick="getResponse(); return false;">
+            <div class="menu1"></div>
+            이수현황
+          </a>
+          <a onclick="getResponse(); return false;">
+            <div class="menu1"></div>
+            휴학복학
+          </a><a onclick="getResponse(); return false;">
+            <div class="menu1"></div>
+            졸업안내
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!---Message-->
+    <div id="chatbox">
+      <p id="startMessage" class="botText"><span> Hello^^
+      <BR>my name is INU ON!
+      <BR>please question about INU!
+      </span></p>
+    </div>
+    <!--user input-->
+    <div class="chat-input-box">
+      <div id="userInput">
+        <input type="text" id="textInput" class="input-box" name="msg" placeholder="Message...">
+      </div>
+      <div class="chat-bar-icons">
+        <i id="chat-icon" style="color: #002964 ;" class="fa fa-fw fa-send" 
+        onclick="sendButton()"></i>
+      </div>     
+    </div>
+    
+  </div>
+</body>
+
+</html>
