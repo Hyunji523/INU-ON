@@ -3,7 +3,7 @@
 // Gets the first message
 function firstBotMessage() {
     let firstMessage = "How's it going?"
-    document.getElementById("startMessage").innerHTML 
+    document.getElementById("botStarterMessage").innerHTML 
     = '<p class="botText"><span>' + firstMessage + '</span></p>';
 }
 
@@ -15,16 +15,12 @@ function getHardResponse(userText) {
     let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
     $("#chatbox").append(botHtml);
 
-    document.getElementById("chat-input-box").scrollIntoView(true);
+    document.getElementById("chat-bar-buttom").scrollIntoView(true);
 }
 
 //Gets the text text from the input box and processes it
 function getResponse() {
     let userText = $("#textInput").val();
-
-    if (userText == "") {
-        userText = "I love Code Palace!";
-    }
 
     let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
 

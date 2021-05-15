@@ -5,7 +5,7 @@
   <title> INU ON </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -51,12 +51,13 @@
       </ul>
     </div>
     <!---Message-->
-    <div id="chatbox">
-      <p id="startMessage" class="botText"><span> Hello^^
-      <BR>my name is INU ON!
-      <BR>please question about INU!
-      </span></p>
+    <div id="chatbox"> 
+      <p id="botStarterMessage" class="botText"><span> Hello^^
+        <BR>my name is INU ON!
+        <BR>please question about INU!
+        </span></p>    
     </div>
+    
     <!--user input-->
     <div class="chat-input-box">
       <div id="userInput">
@@ -67,8 +68,10 @@
         onclick="sendButton()"></i>
       </div>     
     </div>
+    <div id="chat-bar-buttom">
+      <p></p>
+    </div>
     
   </div>
 </body>
-
 </html>
