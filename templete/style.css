@@ -78,7 +78,7 @@ body {
 .top h1{
     top: 75px;
     left: 17px;
-    background: #FFD585 0% 0% no-repeat padding-box;
+    background: #FFD585;
     border-radius: 6px;  
     margin: 20px;
     box-sizing:border-box;
