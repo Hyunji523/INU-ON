@@ -11,9 +11,67 @@ body {
     letter-spacing: -0.025em;
     -webkit-text-size-adjust: none;
 }
-
-
-
+/* login css */
+.chaticon {
+    text-align: center;
+}
+.chaticon img {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    width: 125px;
+    height: 113px;    
+}
+.loginbox {
+    margin: auto;
+    width: 282px;
+    height: 320px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 2px 2px 2px #00000029;
+    border-radius: 35px;
+    text-align: center;
+}
+.loginbox h5 {
+    text-align: center;
+    font: normal normal normal 15px/20px Malgun Gothic;
+    letter-spacing: 0px;
+    color: #292A2A;
+    width: 138px;
+    height: 69px;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+.log-input-id {
+    width: 200px;
+    height: 34px;
+    border: 1px solid #D8D8D8;
+    border-radius: 40px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: left;
+}
+.log-input-pw {
+    width: 200px;
+    height: 34px;
+    border: 1px solid #D8D8D8;
+    border-radius: 40px;
+    margin: auto;
+    margin-top: 5px;
+}
+.loginbutton {
+    width: 205px;
+    height: 34px;
+    border-radius: 40px;
+    text-align: center;
+    font-weight: bold;
+    font: Malgun Gothic;
+    color: white;
+    background: #427FC0;
+    border: 1px solid #707070;
+    margin-top: 30px;
+}
+    
+/* chat css */
 .top h1{
     top: 75px;
     left: 17px;
@@ -70,6 +128,9 @@ li {
     color: #002964;
     font-weight: bold;
     animation: floatup .5s forwards
+}
+.mainMenu a :hover {
+    background-color: rgb(212, 224, 255);
 }
 
 .chat-input-box {
