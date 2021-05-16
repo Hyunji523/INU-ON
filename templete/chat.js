@@ -7,15 +7,33 @@ function firstBotMessage() {
     = '<p class="botText"><span>' + firstMessage + '</span></p>';
 }
 
-firstBotMessage();
+// HTML 생성이 완료된 후 firstBotMessage를 호출해야 
+// document.getElementById("botStarterMessage")를 찾을 수 있습니다
+$(document).ready(function() {
+    firstBotMessage();
+});
 
 // Retrieves the response
 function getHardResponse(userText) {
-    let botResponse = getBotResponse(userText);
-    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
-    $("#chatbox").append(botHtml);
+    let URL = 'https://inuon.run.goorm.io/chatbot/answer?'
+    URL += 'username=201802904&'
+    URL += 'content=' + userText
+    
+    fetch(URL)
+    .then(function(resp) {
+        let res = ''
+        resp.json().then((result) => {
+            res = result['res']
 
-    document.getElementById("chat-bar-buttom").scrollIntoView(true);
+            let botResponse = res
+            let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
+            $("#chatbox").append(botHtml);
+
+            document.getElementById("chat-bar-buttom").scrollIntoView(true);
+        })
+    })
+
+    
 }
 
 //Gets the text text from the input box and processes it
@@ -26,7 +44,7 @@ function getResponse() {
 
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
-    document.getElementById("chat-input-box").scrollIntoView(true);
+    // document.getElementById("chat-input-box").scrollIntoView(true);
 
     setTimeout(() => {
         getHardResponse(userText);
