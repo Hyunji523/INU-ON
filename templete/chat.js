@@ -16,10 +16,15 @@ $(document).ready(function() {
 // Retrieves the response
 function getHardResponse(userText) {
     let URL = 'https://inuon.run.goorm.io/chatbot/answer?'
-    URL += 'username=201802904&'
+    URL += 'username=201802904&' // 사용자 학번으로 추후에 변경하기
     URL += 'content=' + userText
     
-    fetch(URL)
+    fetch(URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
     .then(function(resp) {
         let res = ''
         resp.json().then((result) => {
@@ -32,8 +37,6 @@ function getHardResponse(userText) {
             document.getElementById("chat-bar-buttom").scrollIntoView(true);
         })
     })
-
-    
 }
 
 //Gets the text text from the input box and processes it
@@ -49,7 +52,6 @@ function getResponse() {
     setTimeout(() => {
         getHardResponse(userText);
     }, 1000)
-
 }
 
 // Handles sending text via button clicks
