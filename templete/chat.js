@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 // Retrieves the response
 function getHardResponse(userText) {
-    let URL = 'https://inuon.run.goorm.io/chatbot/answer?'
+    let URL = 'https://inu-on.run.goorm.io/chatbot/answer?'
     URL += 'username=201801589' // 사용자 학번으로 추후에 변경하기
     URL += 'content=' + userText
     

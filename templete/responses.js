@@ -1,4 +1,4 @@
-function getBotResponse(input) {
+function getResponse(input) {
     //rock paper scissors
     if (input == "rock") {
         return "paper";

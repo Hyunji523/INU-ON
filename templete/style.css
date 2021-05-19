@@ -1,16 +1,7 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
- dl, dt, dd, ul, ol, li, h4, h5, h6, pre, code, form, fieldset, legend, input, button, select, textarea, p, blockquote, th, td {
-    margin: 0;
-    padding: 0;
-    font-family: 'NanumSquare', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
-    color: #333;
-    font-weight: 200%;  
-    box-sizing: border-box;
-    letter-spacing: -0.025em;
-    -webkit-text-size-adjust: none;
-}
+ 
 /* login css */
 .chaticon {
     text-align: center;
@@ -113,10 +104,11 @@ li {
 }
 
 /* main_menu */
-.main_menu {
-    clear: both;
+.mainMenu {
     width: calc(100% - 20px);
+    padding: 0;
     margin-bottom: 5px;
+    text-align: center;
 }
 .mainMenu a {
     align-items: center;
@@ -128,7 +120,7 @@ li {
     background-color: #fff;
     text-align: center;
     box-shadow: 1px 0 3px rgb(0 0 0 / 20%);
-    margin: 5px 15px 5px 15px ;
+    margin: 5px 10px 5px 10px ;
     padding: 3%;
     color: #002964;
     font-weight: bold;
@@ -191,7 +183,6 @@ li {
 .userText {
     color: white;
     font-family: monospace;
-    font-size: 17px;
     text-align: right;
     line-height: 30px;
     float: right;
@@ -201,10 +192,8 @@ li {
 
     line-height: 1.5em;
     display: inline-block;
-    padding: 10px;
-    max-width: 80%;
-    margin-right: 10px;
-
+    padding: 12px;
+    margin: 10px;
     word-wrap: break-word;
     margin-bottom: 10px;
     border-radius: 20px 0 20px 20px;

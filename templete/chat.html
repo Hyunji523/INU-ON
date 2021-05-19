@@ -22,28 +22,28 @@
       <!--mainmenu-->
       <ul class="mainMenu">
         <li>
-          <a onclick="getResponse(); ">
+          <a onclick="buttonSendText('공지사항 알려주세요!'); return false;">
             <div class="menu1"></div>
             공지사항
           </a>
-          <a onclick="getResponse(); return false;">
+          <a onclick="buttonSendText('학사일정 알려주세요!'); return false;">
             <div class="menu1"></div>
             학사일정
           </a>
-          <a onclick="getResponse(); return false;">
+          <a onclick="buttonSendText('수강신청이 언제인가요?'); return false;">
             <div class="menu1"></div>
             수강신청
           </a>
         </li>
         <li>
-          <a onclick="getResponse(); return false;">
+          <a onclick="buttonSendText('이수현황 보여주세요!'); return false;">
             <div class="menu1"></div>
             이수현황
           </a>
-          <a onclick="getResponse(); return false;">
+          <a onclick="buttonSendText('휴학복학일정 알려주세요!'); return false;">
             <div class="menu1"></div>
             휴학복학
-          </a><a onclick="getResponse(); return false;">
+          </a><a onclick="buttonSendText('졸업요건이 어떻게 되나요?'); return false;">
             <div class="menu1"></div>
             졸업안내
           </a>
@@ -52,10 +52,7 @@
     </div>
     <!---Message-->
     <div id="chatbox"> 
-      <p id="botStarterMessage" class="botText"><span> Hello^^
-        <BR>my name is INU ON!
-        <BR>please question about INU!
-        </span></p>    
+      <p id="botStarterMessage" class="botText"><span> </span></p>    
     </div>
     
     <!--user input-->
