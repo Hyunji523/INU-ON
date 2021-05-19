@@ -2,7 +2,7 @@
 
 // Gets the first message
 function firstBotMessage() {
-    let firstMessage = "How's it going?"
+    let firstMessage = "Hello^^ my name is INU ON! please question about INU!"
     document.getElementById("botStarterMessage").innerHTML 
     = '<p class="botText"><span>' + firstMessage + '</span></p>';
 }
@@ -13,10 +13,11 @@ $(document).ready(function() {
     firstBotMessage();
 });
 
+
 // Retrieves the response
 function getHardResponse(userText) {
     let URL = 'https://inuon.run.goorm.io/chatbot/answer?'
-    URL += 'username=201802904&' // 사용자 학번으로 추후에 변경하기
+    URL += 'username=201801589' // 사용자 학번으로 추후에 변경하기
     URL += 'content=' + userText
     
     fetch(URL, {
@@ -26,8 +27,7 @@ function getHardResponse(userText) {
         }
     })
     .then(function(resp) {
-        let res = ''
-        resp.json().then((result) => {
+        let res = ''   
             res = result['res']
 
             let botResponse = res
@@ -47,7 +47,7 @@ function getResponse() {
 
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
-    // document.getElementById("chat-input-box").scrollIntoView(true);
+    document.getElementById("chat-input-box").scrollIntoView(true);
 
     setTimeout(() => {
         getHardResponse(userText);
@@ -62,10 +62,6 @@ function buttonSendText(sampleText) {
     $("#chatbox").append(userHtml);
     document.getElementById("chat-input-box").scrollIntoView(true);
 
-    //Uncomment this if you want the bot to respond to this buttonSendText event
-    // setTimeout(() => {
-    //     getHardResponse(sampleText);
-    // }, 1000)
 }
 
 function sendButton() {
@@ -77,5 +73,6 @@ function sendButton() {
 $("#textInput").keypress(function (e) {
     if (e.which == 13) {
         getResponse();
+        return false;
     }
 });
