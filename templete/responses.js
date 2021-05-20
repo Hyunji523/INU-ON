@@ -1,4 +1,4 @@
-function getResponse(input) {
+function getBotResponse(input) {
     //rock paper scissors
     if (input == "rock") {
         return "paper";
@@ -16,4 +16,5 @@ function getResponse(input) {
     } else {
         return "Try asking something else!";
     }
+    
 }

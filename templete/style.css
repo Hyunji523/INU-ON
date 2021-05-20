@@ -186,6 +186,7 @@ li {
     text-align: right;
     line-height: 30px;
     float: right;
+    margin-left: 50px;
 }
 
 .userText span {
@@ -213,7 +214,9 @@ li {
     line-height: 1.5;
     box-shadow: 3px 3px 6px #4d4c4c29;
     text-align: left;
-    float: left;
+    float: left;  
+    margin-bottom: 20px;
+    margin-right: 50px;
 }
 
 .botText span {
@@ -222,7 +225,7 @@ li {
     display: inline-block;
     max-width: 80%;
     margin-left: 5px;
-    animation: floatup .5s forwards
+    animation: floatup .5s forwards;
 }
 
 @keyframes floatup {

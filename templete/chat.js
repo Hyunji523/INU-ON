@@ -2,9 +2,9 @@
 
 // Gets the first message
 function firstBotMessage() {
-    let firstMessage = "Hello^^ my name is INU ON! please question about INU!"
+    let firstMessage = "Hello^^ <br> my name is INU ON! <BR> Please question about INU!"
     document.getElementById("botStarterMessage").innerHTML 
-    = '<p class="botText"><span>' + firstMessage + '</span></p>';
+    = '<li class="botText"><span>' + firstMessage + '</span></li>';
 }
 
 // HTML 생성이 완료된 후 firstBotMessage를 호출해야 
@@ -13,12 +13,16 @@ $(document).ready(function() {
     firstBotMessage();
 });
 
+function getAnswer(){
+
+}
 
 // Retrieves the response
-function getHardResponse(userText) {
-    let URL = 'https://inu-on.run.goorm.io/chatbot/answer?'
-    URL += 'username=201801589' // 사용자 학번으로 추후에 변경하기
-    URL += 'content=' + userText
+function getHardResponse() {
+    //let botResponse = getBotResponse(userText);
+    let URL = 'https://inuon.run.goorm.io/chatbot/user?'
+    URL += 'username=201802904' // 사용자 학번으로 추후에 변경하기
+    //URL += 'content=' + userText
     
     fetch(URL, {
         method: 'GET',
@@ -27,14 +31,15 @@ function getHardResponse(userText) {
         }
     })
     .then(function(resp) {
-        let res = ''   
+        let res = ''
+        resp.json().then((result) => {
             res = result['res']
 
             let botResponse = res
-            let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
+            let botHtml = '<li class="botText"><span>' + botResponse + '</span></li>';
             $("#chatbox").append(botHtml);
 
-            document.getElementById("chat-bar-buttom").scrollIntoView(true);
+            document.getElementById("chat-bar-bottom").scrollIntoView(true);
         })
     })
 }
@@ -43,25 +48,28 @@ function getHardResponse(userText) {
 function getResponse() {
     let userText = $("#textInput").val();
 
-    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+    let userHtml = '<li class="userText"><span>' + userText + '</span></li>';
 
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
-    document.getElementById("chat-input-box").scrollIntoView(true);
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
-    setTimeout(() => {
-        getHardResponse(userText);
-    }, 1000)
+    getHardResponse(userText);   
+
 }
 
 // Handles sending text via button clicks
 function buttonSendText(sampleText) {
-    let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
+
+    let userHtml = '<li class="userText"><span>' + sampleText + '</span></li>';
 
     $("#textInput").val("");
     $("#chatbox").append(userHtml);
-    document.getElementById("chat-input-box").scrollIntoView(true);
+    document.getElementById("chat-bar-bottom").scrollIntoView(false);
 
+    setTimeout(() => {
+             getHardResponse(sampleText);
+         }, 1000)
 }
 
 function sendButton() {
@@ -70,9 +78,8 @@ function sendButton() {
 
 
 // Press enter to send a message
-$("#textInput").keypress(function (e) {
-    if (e.which == 13) {
+$("#textInput").keypress(function (key) {
+    if (key.which == 13) {
         getResponse();
-        return false;
     }
 });
