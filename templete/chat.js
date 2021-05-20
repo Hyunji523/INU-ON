@@ -13,8 +13,12 @@ $(document).ready(function() {
     firstBotMessage();
 });
 
-function getAnswer(){
+function getAnswer(userText) {
+    let botResponse = getBotResponse(userText);
+    let botHtml = '<li class="botText"><span>' + botResponse + '</span></li>';
+    $("#chatbox").append(botHtml);
 
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
 }
 
 // Retrieves the response
@@ -54,7 +58,9 @@ function getResponse() {
     $("#chatbox").append(userHtml);
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
-    getHardResponse(userText);   
+    setTimeout(() => {
+        getAnswer(userText);
+    }, 1000)   
 
 }
 
@@ -68,7 +74,7 @@ function buttonSendText(sampleText) {
     document.getElementById("chat-bar-bottom").scrollIntoView(false);
 
     setTimeout(() => {
-             getHardResponse(sampleText);
+             getAnswer(sampleText);
          }, 1000)
 }
 
