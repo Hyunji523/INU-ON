@@ -13,11 +13,5 @@
 #### adobeXD : https://xd.adobe.com/view/46a431a9-1169-406a-b61b-348af23a4f85-13f7/grid
 #### - HTML, CSS, Javascript
 #### - jquery, font-awesome
-### Reference : 
-https://www.youtube.com/watch?v=He0xK1x-vnI
-
-https://airbot.kr/airBot/airbot.do?type=pc
-
-http://answerny.ai/chatbot/projects/mju/chatbot_mju.html
 
 
